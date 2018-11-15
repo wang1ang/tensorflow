@@ -223,6 +223,7 @@ if (tensorflow_ENABLE_JEMALLOC_SUPPORT)
 endif()
 
 # External dependencies
+include(FindAbseil)
 include(zlib)
 include(gif)
 include(png)
@@ -248,6 +249,7 @@ add_definitions(${ADD_CFLAGS})
 link_directories(${ADD_LINK_DIRECTORY})
 
 set(tensorflow_EXTERNAL_LIBRARIES
+    ${ABSEIL_DEPENDENT_LIBRARIES}
     ${gif_STATIC_LIBRARIES}
     ${png_STATIC_LIBRARIES}
     ${jpeg_STATIC_LIBRARIES}
@@ -296,6 +298,7 @@ include_directories(
     ${tensorflow_source_dir}
     ${CMAKE_CURRENT_BINARY_DIR}
     # External dependencies.
+    ${ABSEIL_INCLUDE_DIRS}
     ${zlib_INCLUDE_DIR}
     ${gif_INCLUDE_DIR}
     ${png_INCLUDE_DIR}

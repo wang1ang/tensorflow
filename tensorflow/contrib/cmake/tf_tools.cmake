@@ -32,7 +32,7 @@ target_link_libraries(${proto_text} PUBLIC
   tf_protos_cc
 )
 
-add_dependencies(${proto_text} tf_core_lib)
+add_dependencies(${proto_text} tf_core_lib_standalone_absl)
 if(tensorflow_ENABLE_GRPC_SUPPORT)
     add_dependencies(${proto_text} grpc)
 endif(tensorflow_ENABLE_GRPC_SUPPORT)
